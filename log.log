@@ -1,0 +1,331 @@
+➜  byebug-issue  bundle exec rspec
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+=> 12:     name = bar(foo)
+   13:     puts name
+   14:   end
+   15: end
+(byebug) step
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+=> 12:     name = bar(foo)
+   13:     puts name
+   14:   end
+   15: end
+(byebug) step
+
+[121, 130] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   121:
+   122:     private
+   123:
+   124:       # @private
+   125:       def __memoized
+=> 126:         @__memoized ||= {}
+   127:       end
+   128:
+   129:       # Used internally to customize the behavior of the
+   130:       # memoized hash when used in a `before(:context)` hook.
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+=> 12:     name = bar(foo)
+   13:     puts name
+   14:   end
+   15: end
+(byebug) step
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+=> 12:     name = bar(foo)
+   13:     puts name
+   14:   end
+   15: end
+(byebug) step
+
+[121, 130] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   121:
+   122:     private
+   123:
+   124:       # @private
+   125:       def __memoized
+=> 126:         @__memoized ||= {}
+   127:       end
+   128:
+   129:       # Used internally to customize the behavior of the
+   130:       # memoized hash when used in a `before(:context)` hook.
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+=> 12:     name = bar(foo)
+   13:     puts name
+   14:   end
+   15: end
+(byebug) step
+
+[1, 10] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    1: require 'spec_helper'
+    2:
+    3: describe Foo do
+=>  4:   let(:foo) { Foo.new('foo') }
+    5:
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+=> 12:     name = bar(foo)
+   13:     puts name
+   14:   end
+   15: end
+(byebug) step
+
+[1, 7] in /Users/elado/Sites/temp/byebug-issue/lib/foo.rb
+   1: class Foo
+   2:   attr_reader :name
+   3:
+   4:   def initialize(name)
+=> 5:     @name = name
+   6:   end
+   7: end
+(byebug) up
+
+[1, 10] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    1: require 'spec_helper'
+    2:
+    3: describe Foo do
+=>  4:   let(:foo) { Foo.new('foo') }
+    5:
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[237, 246] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/memoized_helpers.rb
+   237:           # Apply the memoization. The method has been defined in an ancestor
+   238:           # module so we can use `super` here to get the value.
+   239:           if block.arity == 1
+   240:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(RSpec.current_example, &nil) } }
+   241:           else
+=> 242:             define_method(name) { __memoized.fetch(name) { |k| __memoized[k] = super(&nil) } }
+   243:           end
+   244:         end
+   245:
+   246:         # Just like `let`, except the block is invoked by an implicit `before`
+(byebug) up
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+=> 12:     name = bar(foo)
+   13:     puts name
+   14:   end
+   15: end
+(byebug) step
+
+[2, 11] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    2:
+    3: describe Foo do
+    4:   let(:foo) { Foo.new('foo') }
+    5:
+    6:   def bar(x)
+=>  7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+(byebug) next
+Next went up a frame because previous frame finished
+
+[6, 15] in /Users/elado/Sites/temp/byebug-issue/spec/foo_spec.rb
+    6:   def bar(x)
+    7:     x.name
+    8:   end
+    9:
+   10:   it 'does something' do
+   11:     byebug
+   12:     name = bar(foo)
+=> 13:     puts name
+   14:   end
+   15: end
+(byebug) next
+foo
+Next went up a frame because previous frame finished
+
+[149, 158] in /Users/elado/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/example.rb
+   149:             with_around_example_hooks do
+   150:               begin
+   151:                 run_before_example
+   152:                 @example_group_instance.instance_exec(self, &@example_block)
+   153:
+=> 154:                 if pending?
+   155:                   Pending.mark_fixed! self
+   156:
+   157:                   raise Pending::PendingExampleFixedError,
+   158:                         'Expected example to fail since it is pending, but it passed.',
+(byebug) cont
+.
+
+Finished in 57.69 seconds (files took 0.2191 seconds to load)
+1 example, 0 failures
+➜  byebug-issue
